@@ -1,0 +1,33 @@
+package primenumber;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PrimeNumber {
+
+	public static void main(String[] args)
+	{
+       	Scanner obj = new Scanner(System.in);
+       	System.out.println("enter lower limit");
+       	int n = obj.nextInt();
+       	System.out.println("enter upper limit");
+     	int m = obj.nextInt();
+     	ArrayList<Integer> prime = new ArrayList<Integer>();
+        for(int i = n;i<=m;i++) {
+        	boolean prime1 = findnum(i);
+        	if(prime1 == true) {
+        		prime.add(i);
+        	}
+        }
+        System.out.println(prime);
+	}
+        public static boolean findnum(int num) {
+        	for(int i =2;i<=num/2;i++) {
+        		if(num%i == 0) {
+        			return false;}
+        	}
+        	return true;
+        }
+	
+
+}
