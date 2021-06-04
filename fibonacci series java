@@ -1,25 +1,30 @@
-package fibonacciSeries;
+package largestnumber;
 
 import java.util.ArrayList;
-
-public class FibonacciSeries {
-
-	public static void main(String[] args) {
+import java.util.Scanner;
+public class LargestNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner obj = new Scanner(System.in);
+		System.out.println("enter number you want");
+		Integer num = obj.nextInt();
 		Integer n1=0 , n2=1;
-		Integer count = 10;
+		Integer count =0;
 		ArrayList<Integer> cars = new ArrayList<Integer>();
 		cars.add(n1);
 		cars.add(n2);
-		findfibonacci(count-2 , cars);
+		findfibonacci(count+2 , cars , num);
 		System.out.println(cars);
 	}
-    static void findfibonacci(Integer count , ArrayList<Integer> cars) {
+    static void findfibonacci(Integer count , ArrayList<Integer> cars, Integer num) {
     	Integer n3=0 , n4= 1, n5 =0;
-    	while(count>0) {
+    	while(count<num) {
     		cars.add(n5 = n3+n4);
     		n3 = n4;
     		n4 = n5;
-    		count--;
+    		count++;
     	}
-    }
+	}
+
 }
