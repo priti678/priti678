@@ -1,0 +1,25 @@
+package fibonacciSeries;
+
+import java.util.ArrayList;
+
+public class FibonacciSeries {
+
+	public static void main(String[] args) {
+		Integer n1=0 , n2=1;
+		Integer count = 10;
+		ArrayList<Integer> cars = new ArrayList<Integer>();
+		cars.add(n1);
+		cars.add(n2);
+		findfibonacci(count-2 , cars);
+		System.out.println(cars);
+	}
+    static void findfibonacci(Integer count , ArrayList<Integer> cars) {
+    	Integer n3=0 , n4= 1, n5 =0;
+    	while(count>0) {
+    		cars.add(n5 = n3+n4);
+    		n3 = n4;
+    		n4 = n5;
+    		count--;
+    	}
+    }
+}
